@@ -1,3 +1,4 @@
+# This app is for educational purpose only. Insights gained is not financial advice. Use at your own risk!
 import streamlit as st
 from PIL import Image
 import pandas as pd
@@ -25,6 +26,7 @@ st.image(image, width = 500)
 st.title('Crypto Price App')
 st.markdown("""
 This app retrieves cryptocurrency prices for the top 100 cryptocurrency from the **CoinMarketCap**!
+
 """)
 #---------------------------------#
 # About
@@ -99,6 +101,7 @@ sorted_coin = sorted( df['coin_symbol'] )
 selected_coin = col1.multiselect('Cryptocurrency', sorted_coin, sorted_coin)
 
 df_selected_coin = df[ (df['coin_symbol'].isin(selected_coin)) ] # Filtering data
+
 ## Sidebar - Number of coins to display
 num_coin = col1.slider('Display Top N Coins', 1, 100, 100)
 df_coins = df_selected_coin[:num_coin]
@@ -126,6 +129,7 @@ def filedownload(df):
     return href
 
 col2.markdown(filedownload(df_selected_coin), unsafe_allow_html=True)
+
 #---------------------------------#
 # Preparing data for Bar plot of % Price change
 col2.subheader('Table of % Price Change')
