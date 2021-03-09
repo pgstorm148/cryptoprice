@@ -1,1 +1,10 @@
-pip install matplotlib
+Python==3.6
+NumPy==1.15
+setuptools
+cycler==0.10.0
+dateutil==2.1
+kiwisolver==1.0.0
+Pillow==6.2
+pyparsing==2.0.3
+matplotlib==3.3.4
+
